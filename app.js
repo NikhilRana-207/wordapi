@@ -8,14 +8,14 @@ const {connectDB} = require('./db/connect');
 
 const PORT = process.env.PORT || 8080;
 
-app.get('/', (req, res)=>{
-    res.redirect('https://github.com/NikhilRana-207/wordapi')
-});
-
 app.use((req,res,next)=>{
     res.setHeader('Acces-Control-Allow-Origin','*');
     next(); 
 })
+
+app.get('/', (req, res)=>{
+    res.redirect('https://github.com/NikhilRana-207/wordapi')
+});
 
 app.use('/api/', router);
 
