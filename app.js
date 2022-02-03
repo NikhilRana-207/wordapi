@@ -12,6 +12,11 @@ app.get('/', (req, res)=>{
     res.redirect('https://github.com/NikhilRana-207/wordapi')
 });
 
+app.use((req,res,next)=>{
+    res.setHeader('Acces-Control-Allow-Origin','*');
+    next(); 
+})
+
 app.use('/api/', router);
 
 const start = async ()=>{
