@@ -6,9 +6,9 @@ const getWord = async (req, res) => {
         if (!word) {
             return res.status(404).send("Not found!");
         }
-    return res.send(word.word);
+        return res.json({data:word});
     } catch (error) {
-        res.send(error.message);
+        res.json(error);
     }
 }
 
@@ -18,7 +18,7 @@ const checkWord = async (req, res) => {
         if (!word) {
             return res.status(404).send("Word not found!");
         }
-        return res.send(word);    
+        return res.json(word);    
     } catch (error) {
         res.send(error.message);
     }
