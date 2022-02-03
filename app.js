@@ -9,7 +9,7 @@ const {connectDB} = require('./db/connect');
 const PORT = process.env.PORT || 8080;
 
 app.use((req,res,next)=>{
-    res.setHeader('Acces-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Origin','*');
     next(); 
 })
 
