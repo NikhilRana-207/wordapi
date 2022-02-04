@@ -4,7 +4,7 @@ const getWord = async (req, res) => {
     try {
         const word = await Words.findOne({ serial: req.params.serial });
         if (!word) {
-            return res.send("Not found!");
+            return res.json({message: "Word not found!"});
         }
         return res.json({data:word});
     } catch (error) {
@@ -16,7 +16,7 @@ const checkWord = async (req, res) => {
     try {
         let word = await Words.findOne({ word: req.params.word });
         if (!word) {
-            return res.send("Word not found!");
+            return res.json({message: "Word not found!"});
         }
         return res.json(word);    
     } catch (error) {
